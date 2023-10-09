@@ -1,18 +1,22 @@
 import random
 
-# randon.choise devuelve un velor aleatorio extraido de la secuencia pasada como argumento
+# Se importó la libreria "randon"
 
 import interfaz
+
+# Se importó la librería "interfaz"
 
 
 
 
 def  leer_palabra_secreta(palabras):
+    palabra = random.choice(palabras)
+    return palabra
 
 
 
     
-    pass
+
 
 if __name__ == "__main__":
 
