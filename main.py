@@ -14,6 +14,10 @@ def  leer_palabra_secreta(palabras):
     return palabra
 
 
+def  pedir_letra(letras_usadas):
+    pass
+
+
 
     
 
