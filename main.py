@@ -15,6 +15,8 @@ def  leer_palabra_secreta(palabras):
 
 
 def  pedir_letra(letras_usadas):
+
+        letra = " "
         
         while True:
 
@@ -24,7 +26,18 @@ def  pedir_letra(letras_usadas):
             
              break
         letras_usadas.append(letra)
-        return letras_usadas
+        return letra
+
+def  verificar_letra(letra, palabra_secreta):
+
+    if letra in palabra_secreta:
+        return True
+    else:
+        return False
+
+
+def  validar_palabra(letras_usadas, palabra_secreta):
+
     
 
 
