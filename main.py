@@ -24,7 +24,7 @@ def  pedir_letra(letras_usadas):
 
             if letra not in letras_usadas and len(letra) == 1:
             
-             break
+                break
         letras_usadas.append(letra)
         return letra
 
@@ -37,6 +37,15 @@ def  verificar_letra(letra, palabra_secreta):
 
 
 def  validar_palabra(letras_usadas, palabra_secreta):
+    for i in range(len(palabra_secreta)):
+        while True:
+            if palabra_secreta[i] in letras_usadas:
+                return True
+            else:
+                print("Aun no se ha adivinado la palabra secreta")
+                return False
+                break
+                
 
     
 
