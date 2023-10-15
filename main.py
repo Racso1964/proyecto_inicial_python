@@ -15,7 +15,17 @@ def  leer_palabra_secreta(palabras):
 
 
 def  pedir_letra(letras_usadas):
-    pass
+        
+        while True:
+
+            letra = str(input("Ingrese nueva letra\n"))
+
+            if letra not in letras_usadas and len(letra) == 1:
+            
+             break
+        letras_usadas.append(letra)
+        return letras_usadas
+    
 
 
 
