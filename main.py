@@ -10,8 +10,8 @@ import interfaz
 
 
 def  leer_palabra_secreta(palabras):
-    palabra = random.choice(palabras)
-    return palabra
+    palabra_secreta = random.choice(palabras)
+    return palabra_secreta
 
 
 def  pedir_letra(letras_usadas):
@@ -37,9 +37,14 @@ def  verificar_letra(letra, palabra_secreta):
 
 
 def  validar_palabra(letras_usadas, palabra_secreta):
-    for i in range(len(palabra_secreta)):
-        while True:
+   
+    while True:
+        #print(letras_usadas)
+        for i in range(len(palabra_secreta)):
             if palabra_secreta[i] in letras_usadas:
+            
+                #print(palabra_secreta[i])
+        
                 return True
             else:
                 print("Aun no se ha adivinado la palabra secreta")
