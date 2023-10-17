@@ -37,21 +37,22 @@ def  verificar_letra(letra, palabra_secreta):
 
 
 def  validar_palabra(letras_usadas, palabra_secreta):
-    len_palabra_secreta = 0
+    acum_palabra_secreta = 0
    
     while True:
         
         for i in range(len(palabra_secreta)):
             
             if palabra_secreta[i] in letras_usadas:
-                len_palabra_secreta += 1
-                if i+1 == len_palabra_secreta: # Acumula el numero de iteraciones a "palabra_secreta"
+                acum_palabra_secreta += 1
+                #if i == acum_palabra_secreta: # Acumula el numero de iteraciones a "palabra_secreta"
+                if i == acum_palabra_secreta or acum_palabra_secreta == len(palabra_secreta):
                     return True
                     break
             else:
                 print("Aun no se ha adivinado la palabra secreta")
                 return False
-                break
+                #break
                 
 
     
@@ -72,7 +73,7 @@ if __name__ == "__main__":
     es_ganador = False
 
     # Leer la palabra secreta de una lista.
-    palabras = ["listas", "bucles", "variables"]
+    palabras = ["li", "bu", "va"]
     palabra_secreta = leer_palabra_secreta(palabras)
     
     # Esto se realiza para que el jugador pueda ver al principio
