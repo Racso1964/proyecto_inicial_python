@@ -37,15 +37,17 @@ def  verificar_letra(letra, palabra_secreta):
 
 
 def  validar_palabra(letras_usadas, palabra_secreta):
+    len_palabra_secreta = 0
    
     while True:
-        #print(letras_usadas)
-        for i in range(len(palabra_secreta)):
-            if palabra_secreta[i] in letras_usadas:
-            
-                #print(palabra_secreta[i])
         
-                return True
+        for i in range(len(palabra_secreta)):
+            
+            if palabra_secreta[i] in letras_usadas:
+                len_palabra_secreta += 1
+                if i+1 == len_palabra_secreta: # Acumula el numero de iteraciones a "palabra_secreta"
+                    return True
+                    break
             else:
                 print("Aun no se ha adivinado la palabra secreta")
                 return False
