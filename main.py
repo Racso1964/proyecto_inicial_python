@@ -13,54 +13,47 @@ def  leer_palabra_secreta(palabras):
     palabra_secreta = random.choice(palabras)
     return palabra_secreta
 
-
 def  pedir_letra(letras_usadas):
-
         letra = " "
-        
+        filtro_letra = " "
+        letreros = ["z", "y", "x", "w", "v", "u", "t", "s", "r", "q", "p", "o", "ñ", "n", "m", "l", "k", "j", "i", "h", "g", "f", "e", "d", "c", "b", "a"] 
         while True:
+            letra = str(input("Ingrese sólo una letra\n"))
+            filtro_letra = letra.lower()
 
-            letra = str(input("Ingrese nueva letra\n"))
-
-            if letra not in letras_usadas and len(letra) == 1:
+            print(f"numero de caracteres de variable letra: {len(filtro_letra)}")
+            if filtro_letra in letreros and len(filtro_letra) == 1:
+                letra = filtro_letra
+                #letras_usadas.append(letra)
+                if letra  in letras_usadas: #and len(letra) == 1:  # La segunda condicion asegura al programa que aceptará por teclado sólo una letra
+                    print(f"La lettra {letra} ¡¡¡  ESTA  REPETIDA  ¡¡¡\n")
+                    break
+                letras_usadas.append(letra)
+                return letra
             
-                break
-        letras_usadas.append(letra)
-        return letra
-
 def  verificar_letra(letra, palabra_secreta):
-
     if letra in palabra_secreta:
         return True
     else:
         return False
-
-
+    
 def  validar_palabra(letras_usadas, palabra_secreta):
     acum_palabra_secreta = 0
-   
-    while True:
-        
-        for i in range(len(palabra_secreta)):
-            
+    while True:  
+        for i in range(len(palabra_secreta)):    
             if palabra_secreta[i] in letras_usadas:
                 acum_palabra_secreta += 1
-                #if i == acum_palabra_secreta: # Acumula el numero de iteraciones a "palabra_secreta"
+
+
+                # "acum_palabra_secreta"  Acumula el numero de iteraciones a "palabra_secreta"
+
                 if i == acum_palabra_secreta or acum_palabra_secreta == len(palabra_secreta):
                     return True
                     break
             else:
                 print("Aun no se ha adivinado la palabra secreta")
                 return False
-                #break
-                
-
-    
-
-
-
-    
-
+            
 
 if __name__ == "__main__":
 
@@ -73,7 +66,7 @@ if __name__ == "__main__":
     es_ganador = False
 
     # Leer la palabra secreta de una lista.
-    palabras = ["li", "bu", "va"]
+    palabras = ["listas", "bucles", "variables"]
     palabra_secreta = leer_palabra_secreta(palabras)
     
     # Esto se realiza para que el jugador pueda ver al principio
