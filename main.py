@@ -22,11 +22,12 @@ def  pedir_letra(letras_usadas):
             ingreso_letra  = str(input("Ingrese sólo una letra\n"))
             filtro_letra = ingreso_letra.lower()
             if filtro_letra in letreros and len(filtro_letra) == 1:
-                ingreso_letra  = filtro_letra
-                if  ingreso_letra   in letras_usadas: #and len(letra) == 1:  # La segunda condicion asegura al programa que aceptará por teclado sólo una letra
-                    print(f"La lettra {ingreso_letra } ¡¡¡  ESTA  REPETIDA  ¡¡¡\n")
-                letras_usadas.append(ingreso_letra )
-                return ingreso_letra 
+                if filtro_letra not in letras_usadas:
+                    ingreso_letra  = filtro_letra
+                    if  ingreso_letra   in letras_usadas: #and len(letra) == 1:  # La segunda condicion asegura al programa que aceptará por teclado sólo una letra
+                        print(f"La lettra {ingreso_letra } YA EXISTE \n")
+                    letras_usadas.append(ingreso_letra )
+                    return ingreso_letra 
             
 def  verificar_letra(ingreso_letra, palabra_secreta):
     if ingreso_letra in palabra_secreta:
