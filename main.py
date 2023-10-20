@@ -14,25 +14,22 @@ def  leer_palabra_secreta(palabras):
     return palabra_secreta
 
 def  pedir_letra(letras_usadas):
-        letra = " "
+        ingreso_letra = " "
         filtro_letra = " "
         letreros = ["z", "y", "x", "w", "v", "u", "t", "s", "r", "q", "p", "o", "ñ", "n", "m", "l", "k", "j", "i", "h", "g", "f", "e", "d", "c", "b", "a"] 
         while True:
-            letra = str(input("Ingrese sólo una letra\n"))
-            filtro_letra = letra.lower()
-
-            print(f"numero de caracteres de variable letra: {len(filtro_letra)}")
+        
+            ingreso_letra  = str(input("Ingrese sólo una letra\n"))
+            filtro_letra = ingreso_letra.lower()
             if filtro_letra in letreros and len(filtro_letra) == 1:
-                letra = filtro_letra
-                #letras_usadas.append(letra)
-                if letra  in letras_usadas: #and len(letra) == 1:  # La segunda condicion asegura al programa que aceptará por teclado sólo una letra
-                    print(f"La lettra {letra} ¡¡¡  ESTA  REPETIDA  ¡¡¡\n")
-                    break
-                letras_usadas.append(letra)
-                return letra
+                ingreso_letra  = filtro_letra
+                if  ingreso_letra   in letras_usadas: #and len(letra) == 1:  # La segunda condicion asegura al programa que aceptará por teclado sólo una letra
+                    print(f"La lettra {ingreso_letra } ¡¡¡  ESTA  REPETIDA  ¡¡¡\n")
+                letras_usadas.append(ingreso_letra )
+                return ingreso_letra 
             
-def  verificar_letra(letra, palabra_secreta):
-    if letra in palabra_secreta:
+def  verificar_letra(ingreso_letra, palabra_secreta):
+    if ingreso_letra in palabra_secreta:
         return True
     else:
         return False
